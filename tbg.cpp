@@ -124,19 +124,58 @@ void shop() {
 		}
 	} while (input != "q");
 }    
-		//Battle system defintion 
+//Battle system defintion 
 		void Battle (int MonsterHealth) {
 			int damage;
-			while (health > 0 && MonsterHealth >0) {
+			while (health > 0 && MonsterHealth > 0) {
 				//the monster attacks
-				damage = rand() % 20; 
+				damage = rand() % 20;
 				cout << "the monster hurts you for " << damage << "damage." << endl;
 				health -= damage;//take the damage
 				//the human attacks 
-				if (inventory[4]== "sword") {
-				damage = rand() % 50 + 10;
-				cout << " you use your sword against the enmey" << endl;
+				if (inventory[4] == "sword") {
+					damage = rand() % 60 + 20;
+					cout << " you use your sword against the enmey" << endl;
+				}
 				else {
-				cout << "you defeated the monster!" << endl << endl;
+					damage = rand() % 50 + 10;
+					cout << "you hit the monster with your fist" << endl;
+				}
+
+				cout << " you attack the monster for " << damage << "damage" << endl;
+				MonsterHealth -= damage;
+
+
+				}
+				if (MonsterHealth <= 0)
+					cout << "you defeated the monster!" << endl << endl;
 				else cout << "you died." << endl << endl;
 
+
+
+			}
+			
+		void npc(int ty) { 
+
+			string input;
+
+			while (input.compare("leave") != 0) {
+				switch (ty) {
+
+
+				case 1:"npc start talking to ty ";
+
+
+
+
+				}
+				case2:"  npc  ";
+
+
+
+
+			}
+
+
+		}
+		
