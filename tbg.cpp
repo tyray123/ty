@@ -17,6 +17,7 @@ int main() {
 
 		switch (room) {
 		case 1:
+		
 			cout << " you've entered the skateboard shop. You can go north to collect the board and the grip. You can go east collect the bearings. You can go west to collect your wheels/chucks and complete your board." << endl;
 			cin >> input;
 			if (input == 'n')
@@ -30,6 +31,7 @@ int main() {
 				cout << "sorry, not an option." << endl;
 			break;
 		case 2:
+
 			cout << "You can go north 'n' to continue down the hallway or go back 'b'." << endl;
 			cin >> input;
 			if (input == 'n')
@@ -52,6 +54,7 @@ int main() {
 
 
 		case 4:
+ 		
 			cout << "If you continue west 'w' you can collect your wheels and chucks or you can go back 'b'." << endl;
 			cin >> input;
 			if (input == 'w')
@@ -77,6 +80,9 @@ int main() {
 
 
 		case 6:
+		if (inventory[1] != "board and grip tape") {
+			cout << "you found a skateboard whell and put it in backpack" << endl;
+			inventory[1] = "board and grip tape";
 			cout << "If you go north 'n' you can get your board and grip tape. Or you can go back 'b'." << endl;
 			cin >> input;
 			if (input == 'n')
@@ -121,6 +127,7 @@ int main() {
 				cout << "sorry, not an option." << endl;
 			break;
 		case 10:
+		
 			cout << "You can go south 's' to collect your bearings. Or go back 'b'" << endl;
 			cin >> input;
 			if (input == 's')
@@ -131,6 +138,9 @@ int main() {
 				cout << "sorry, not an option." << endl;
 			break;
 		case 11:
+			if (inventory[2] != "bearings") {
+				cout << "you found a skateboard bearings put it in backpack" << endl;
+				inventory[2] = "bearings";
 			cout << "You can collect your bearings. Or go back" << endl;
 			cin >> input;
 			if (input == 'e')
@@ -141,6 +151,9 @@ int main() {
 				cout << "sorry, not an option." << endl;
 			break;
 		case 12:
+			if (inventory[3] != " wheels and chucks ") {
+				cout << "you found a skateboard wheels and chucks put it in backpack" << endl;
+				inventory[3] = "wheels and chucks";
 			cout << "You can collect your wheels and chucks. Or go back 'b'." << endl;
 			cin >> input;
 			if (input == 'b')
@@ -165,27 +178,33 @@ int main() {
 				cout << "sorry, not an option." << endl;
 			break;
 		case 15:
+			if (inventory[4] != "board and tape") {
+				cout << "you found a skateboard board and girp tape put it in your backpack " << endl;
+				inventory[4] = "board";
+
 			cout << "You can collect your grip tape or go back 'b'." << endl;
 			cin >> input;
 			if (input == 'b')
 				room = 9;
-		} while (input != 'q');
+		}
+	} while (input != 'q');
 
-	} //function defintions------------------------
-	void shop() {
-		// remember to add "string inventory[10]"to your variables up top!
-		string input; // local to shop
-		do {
-			cout << "Hi great job making a skateboard!" << endl;
-			cout << "Enter p to pay. A skateboard is $500" << endl;
-			cout << "money:" << money << endl;
-			cin >> input;
-			if (input == "p") {
-				inventory[0] = "skateboard";
-				cout << "you bought your skateboard!" << endl;
-				money -= 500;
+} //function defintions------------------------
 
-			}
-		} while (input != "q");
-	}
+
+void shop() {
+	// remember to add "string inventory[10]"to your variables up top!
+	string input; // local to shop
+	do {
+		cout << "Hi great job making a skateboard!" << endl;
+		cout << "Enter p to pay. A skateboard is $500" << endl;
+		cout << "money:" << money << endl;
+		cin >> input;
+		if (input == "p") {
+			inventory[0] = "skateboard";
+			cout << "you bought your skateboard!" << endl;
+			money -= 500;
+
+		}
+	} while (input != "q");
 }
